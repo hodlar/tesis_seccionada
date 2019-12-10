@@ -1,6 +1,6 @@
 \chapter{Extensi\'on al modelo Pakal \-- A\~nadiendo presi\'on magn\'etica}
 
-La extensi\'on propuesta en esta tesis al modelo computacional Pakal le a\~nade a este \'ultimo el efecto de la presi\'on magn\'etica a la ecuaci\'on de estado. Con lo anterior, el modelo de Pakal, que en principio era un modelo computacional que simulaba un modelo hidrost\'atico para el comportamiento del plasma, se robustece al convertirse en un modelo de Magnetohidrost\'atica. Hablando en t\'erminos f\'isicos, se podr\'ia decir que el modelo original resolv\'ia la siguiente ecuaci\'on de estado:
+La extensi\'on propuesta en esta tesis al modelo computacional Pakal le a\~nade a este \'ultimo el efecto de la presi\'on magn\'etica a la ecuaci\'on de estado. Con lo anterior, el modelo de Pakal, que en principio era un modelo computacional que simulaba un modelo hidrost\'atico para el comportamiento del plasma, se robustece al convertirse en un modelo Magnetohidrost\'atico. El modelo original resuelve la siguiente ecuaci\'on de estado:
 
 \begin{equation*} \label{ecuacion_hidrostatica}
 \frac{dp}{dz} = g\rho
@@ -10,19 +10,21 @@ donde
 \begin{equation*} \label{ecuacion_presion}
 p = p_g + \frac{1}{2}\rho v_t^2
 \end{equation*}
-
+*agregar referencia y explicar que pedo*
 
 A esta f\'ormula, se le a\~nade el efecto de la presi\'on magn\'etica, resultando en la siguiente ecuaci\'on\citep{priest}.
 
 \begin{equation*} \label{mhs}
 p = p_g + \frac{1}{2}\rho v_t^2 + p_B
 \end{equation*}
+*agregar referencia y explicar que pedo*
 
 Cabe aclarar que la f\'ormula que utiliza el c\'odigo de la extensi\'on a Pakal considera la siguiente ecuaci\'on de presi\'on magn\'etica para realizar los c\'alculos:
 
-$PB = \frac{B^2}{8\Pi}$
+$P_B = \frac{B^2}{8\Pi}$
+*agregar referencia y explicar que pedo*
 
-A continuaci\'on se precisar\'a el c\'odigo de la extensi\'on computacional al programa Pakal realizado en esta tesis. Se contextualizar\'a dicho c\'odigo con secciones del c\'odigo original. Las extensiones al c\'odigo se diferenciar\'an al c\'odigo original al estar con un estilo de letra en \textbf{negrita}, mientras que los nombres de los archivos se encuentran \underline{subrrayados}. Adem\'as, se comentar\'a la funci\'on realizada por el c\'odigo agregado. 
+A continuaci\'on se precisar\'a el c\'odigo de la extensi\'on computacional al programa Pakal realizado en esta tesis. Se contextualizar\'a dicho c\'odigo con secciones del c\'odigo original. Las extensiones al c\'odigo se diferenciar\'an al c\'odigo original al estar con un estilo de letra en \textbf{negrita}, mientras que los nombres de los archivos se encuentran \underline{subrayados}. Adem\'as, se comentar\'a la funci\'on realizada por el c\'odigo agregado. 
 
 Para hacer posible la adici\'on del efecto de la presi\'on magn\'etica sobre la ecuaci\'on de estado dentro del c\'odigo Pakal, se modificaron los siguientes archivos:\newline
 
