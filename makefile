@@ -8,5 +8,5 @@ all:
 	pdflatex tesis_terminal.tex
 	
 clean:
-	rm *.aux *.log *.toc *.pdf *.out *.blg *.bbl *.xml
+	rm *.aux *.log *.toc *.out *.blg *.bbl *.xml
 	rm tex/*.aux
