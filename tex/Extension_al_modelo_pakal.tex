@@ -1,28 +1,26 @@
 \chapter{Extensi\'on al modelo Pakal \-- A\~nadiendo presi\'on magn\'etica}
 
-La extensi\'on propuesta en esta tesis al modelo computacional Pakal le a\~nade a este \'ultimo el efecto de la presi\'on magn\'etica a la ecuaci\'on de estado. Con lo anterior, el modelo de Pakal, que en principio era un modelo computacional que simulaba un modelo hidrost\'atico para el comportamiento del plasma, se robustece al convertirse en un modelo Magnetohidrost\'atico. El modelo original resuelve la siguiente ecuaci\'on de estado:
+La extensi\'on propuesta en esta tesis al modelo computacional Pakal le a\~nade a este \'ultimo el efecto de la presi\'on magn\'etica a la ecuaci\'on de estado. Con lo anterior, el modelo de Pakal, que en principio era un modelo computacional que simulaba un modelo hidrost\'atico para el comportamiento del plasma, se robustece al convertirse en un modelo Magnetohidrost\'atico. El modelo original resuelve la ecuaci\'on de estado del gas suponiendo una atm\'osfera est\'atica donde:
 
-\begin{equation*} \label{ecuacion_hidrostatica}
+\begin{equation} \label{ecuacion_hidrostatica}
 \frac{dp}{dz} = g\rho
-\end{equation*}
-donde
+\end{equation}
 
-\begin{equation*} \label{ecuacion_presion}
+Siendo \textit{p} la presi\'on, \textit{z} la profundidad geom\'etrica, \textit{g} la aceleraci\'on de la gravedad y \textit{$\rho$} la densidad. Para la presi\'on, se toma en cuenta la presi\'on producida por el propio gas en equilibrio hidrost\'atico, m\'as la presi\'on por turbulencia.
+
+\begin{equation} \label{ecuacion_presion}
 p = p_g + \frac{1}{2}\rho v_t^2
-\end{equation*}
-*agregar referencia y explicar que pedo*
+\end{equation}
 
-A esta f\'ormula, se le a\~nade el efecto de la presi\'on magn\'etica, resultando en la siguiente ecuaci\'on\citep{priest}.
+En la ecuaci\'on \ref{ecuacion_presion}, el t\'ermino $p_g$ es la presi\'on del gas en equilibrio termodin\'amico ($p_g$ = $n_t$kT), mientras que el t\'ermino $v_t$ es definido como la velocidad promedio de turbulencia, la cu\'al caracteriza la presi\'on debida a la turbulencia.
 
-\begin{equation*} \label{mhs}
+A esta f\'ormula, se le a\~nade el efecto de la presi\'on causada por el campo magn\'etico, conocida como presi\'on magn\'etica ($P_B$), resultando en \citep{priest}: 
+
+\begin{equation} \label{mhs}
 p = p_g + \frac{1}{2}\rho v_t^2 + p_B
-\end{equation*}
-*agregar referencia y explicar que pedo*
+\end{equation}
 
-Cabe aclarar que la f\'ormula que utiliza el c\'odigo de la extensi\'on a Pakal considera la siguiente ecuaci\'on de presi\'on magn\'etica para realizar los c\'alculos:
-
-$P_B = \frac{B^2}{8\Pi}$
-*agregar referencia y explicar que pedo*
+El valor utilizado para $P_B$ est\'a dado por $P_B = \frac{B^2}{8\pi}$ donde B es la magnitud del campo magn\'etico en el punto donde se desea realizar el c\'alculo y $\pi$ es la constante matem\'atica \citep{PBvalue}. 
 
 A continuaci\'on se precisar\'a el c\'odigo de la extensi\'on computacional al programa Pakal realizado en esta tesis. Se contextualizar\'a dicho c\'odigo con secciones del c\'odigo original. Las extensiones al c\'odigo se diferenciar\'an al c\'odigo original al estar con un estilo de letra en \textbf{negrita}, mientras que los nombres de los archivos se encuentran \underline{subrayados}. Adem\'as, se comentar\'a la funci\'on realizada por el c\'odigo agregado. 
 
