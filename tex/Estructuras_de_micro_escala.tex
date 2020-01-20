@@ -9,6 +9,81 @@ La atm\'osfera solar se divide en las siguientes capas: la fot\'osfera, crom\'os
 *Existe debate sobre si la regi\'on de transici\'on es una regi\'on por s\'i misma o forma parte de la Crom\'osfera. Independientemente de esto, se localizar\'ia entre la Crom\'osfera y la Corona Solar.} \label{atmosfera_solar}
 \end{figure}
 
+A continuaci\'on se define la temperatura de brillo, temperatura efectiva y las relaciones de la transferencia radiativa en una forma que \'util para la interpretaci\'on de las observaciones de radio. La ecuaci\'on de la transferencia radiativa es usualmente escrita en t\'erminos de la intensidad espec\'ifica $I_\nu$, pero a frecvuencias de radio donde \textit{$h\nu$} $<<$ kT, es conveniente cambiar las variables de $I_\nu$ a temperaturas de brillo $T_b$, donde
+
+\begin{equation} \label{temperatura_brillo}
+I_\nu = kT_bv^2/c^2\, erg \, cm^{-2} \,s^{-1} \,Hz^{-1} \,sr^{-1}
+\end{equation}
+
+Es tambi\'en conveniente reemplazar la funci\'on fuente $S_\nu$ por $T_{eff}$, la temperatura efectiva de los electrones radiantes, usando la relaci\'on
+
+\begin{equation} \label{fuente}
+S_\nu = \eta_\nu \kappa_\nu = kT_{eff}\nu^2/c^2
+\end{equation}
+
+En el caso de una distribuci\'on electr\'onica Maxwieliana de temperatura T, $T_eff$ es igual a T indepentemente de la emisi\'on del mecanizmo, frecuencia o modo de polarizaci\'on; adem\'as, la emisi\'on $\eta_\nu$ es relacionada con el coeficiente de absorci\'on $\kappa_\nu$ por la ley de Kirchhoff
+
+\begin{equation} \label{eta_frecuencia}
+\eta_\nu = \kappa_\nu k T \nu^2/c^2 \, erg \, cm^{-3} \,s^{-1} \,Hz^{-1}\, sr^{-1}
+\end{equation}
+
+En contraste, para una distribuci\'on no t\'ermica, $T_eff$ generalmente es una funci\'on tanto de frecuencia como de modo de polarizaci\'on (Wild et al. 1963). N\'otese que el factor usual de 2 se retira de las ecuaciones \ref{temperatura_brillo} y \ref{fuente} dado que definimos $I_\nu$ y $S_\nu$ para cada polarizaci\'on ortogonal independientemente y tenemos
+
+\begin{equation} \label{intensidad_total}
+I^{tot}_\nu = I^{P1}_\nu + I^{P2}_\nu
+\end{equation}
+
+Las ecuaciones \ref{temperatura_brillo} y \ref{fuente} permiten escribir la ecuaci\'on de transferencia en la forma
+\begin{equation} \label{diferencial_temperatura}
+dT_b/d\tau_\nu = -T_b + T_eff
+\end{equation}
+
+o como integral
+
+\begin{equation} \label{temperatura_integral}
+T_b = \int_{0}^{\tau_\nu} T_eff e^{-t_\nu} dt_\nu + T_{b0} e^{-\tau_\nu}
+\end{equation}
+
+Las ecuaciones \ref{diferencial_temperatura} y \ref{diferencial_temperatura} y la f\'ormula girosincrotr\'on dadas a continuaci\'on son v\'alidas solo para medios en que la densidad es tan baja que el \'indice de refracci\'on es cercano a la unidad. Esta situaci\'on, que aplica a un rango amplio de situaciones astrof\'isicas, es el \'unico para el que la f\'ormula de inter\'es puede ser considerablemente simplificado. Cuando el \'indice de refacci\'on se desv\'ia significativamente d ela unidad, debe ser inclu\'ido propiamente en las ecuaciones \ref{diferencial_temperatura} y \ref{diferencial_temperatura}, y el medio de supresi\'on (el efecto Razin-Tsytovich) debe ser tomado en cuenta. Puntualmente el medio de supresi\'on es importante cuando $\nu < 20$ $\eta_e/B$ (ver Ginzburg \& Syrovatskii 1969).
+En el caso especial de una fuente aislada con $T_eff$ constante, la ecuaci\'on \ref{temperatura_integral} se reduce a
+
+\begin{equation} \label{t_brillo1}
+T_b = T_{eff}[1-e^{-\tau_\nu}]
+\end{equation}
+
+\begin{equation} \label{t_brillo2}
+T_b = T_{eff} \qquad (si \, \tau_\nu >> 1)
+\end{equation}
+
+\begin{equation} \label{t_brillo3}
+T_b = T_{eff} \tau_\nu (c^2/k\nu^2)\eta_ \nu L \qquad (si \, \tau_\nu << 1)
+\end{equation}
+
+Para radiaciones incoherentes, las ecuaciones \ref{t_brillo1} y \ref{t_brillo2} son de considerable importancia y utilidad. Ah\'i se muestra que tal radiaci\'on no puede alcanzar un valor de $T_b$ m\'as alto que $T_{eff}$. Adem\'as, la funci\'on fuente $T_{eff}$ se relaciona a la energ\'ia media de las part\'iculas que emitidas por $<E>$ = $kT_{eff}$. Por ejemplo, para electrones monoel\'ectricos de $T_{eff}$ = $E_0/k$ o una distribuci\'on Maxweliana de $T_{eff}$ = $T$ = $E_0/k$, tenemos que $T_{b,max} = T_{eff}$, por ejemplo $T_{b,max} = 1.16 x 10^7$ K si $E_0 = 1$ keV o $1.16 x 10 ^{10}$K si $E_0 = 1$MeV. En el caso de la ley de potencia de distribuci\'on elect\'onica, $T_{eff}$ es determinada por la energ\'ia media de los electrones contribuyendo principalmente a la intensidad a una frecuencia particular y un modo de polarizaci\'on. Si esa energ\'ia media y por lo tanto la temperatura de brillo son muy altas, las circunstancias  deben ser que la mayor cantidad delectrones de baja energ\'ia no emitan y absorban eficientemente; en general, esto requiere un campo magn\'etico d\'ebil. Bajo condiciones estelares y solares, la fuerza de los campos tiende a ser grande y las energ\'ias electr\'onicas bajas (comoparado con, por ejemplo, las fuentes extragal\'acticas), tal que $T_{eff}$ y $T_b$ de emisi\'on incoherente son usualmente limitados a entre $10^9$ y $10^{10}$K. Los valores observados substancialmente sobre eso por lo tanto, implica un mecanismo coherente, tal como un maser o radiaci\'on plasma.
+La densidad de flujo S (para una polarizaci\'on) de una fuente de radio se relaciona con la temperatura de brillo por la relaci\'on
+
+\begin{equation} \label{densidad_flujo}
+S = k\nu^2/c^2 \int T_b d\Omega
+\end{equation}
+
+donde $d\Omega$ es un \'angulo diferencial s\'olido y la integral es sobre el \'area proyectada de la fuente.
+
+Cuando los electrones son desviados individualmente en los campos coulomb deiones debido a su movimiento acelerado, se produce bremsstrahlung, o emisi\'on libre-libre. El proceso inverso, absorci\'on libre-libre, ocurre cuanddo los electrones comienzan a oscilar en resonancia con el campo el\'ectrico de una onda y entonces las colisiones electr\'on i\'on destruyen la oscilaci\'on; esto decrementa la energ\'ia de la onda y calienta el plasma.
+
+El coeficiente de absorci\'on para electrones t\'ermicos es
+
+\begin{equation} \label{coeficiente_absorcion}
+\kappa \approx \sum_{i} \frac{1}{3c} (\frac{2}{\pi})^{1/2} \frac{\nu_p^2}{\nu^2} \frac{4\pi Z_i^2 n_i e^4}{m^{1/2}(kT)^{3/2}} \frac{\pi}{\sqrt{3}}G(T,\nu) \approx 9.78 \times 10^{-3} \frac{n_e}{\nu^2T^{3/2}} \sum_i Z_i^2 n_i
+\end{equation}
+
+La emissividad $\eta_\nu$ se encuentra relacionada a $\kappa_\nu$ por la ley de Kirchhoff (Ecuaci\'on \ref{eta_frecuencia}).
+
+Para varios casos una forma simplificada de la Ecuaci\'on \ref{coeficiente_absorcion} puede ser usada. Asumiendo un plasma hidr\'ogeno-helio completamente ionizado y tomando valores t\'ipicos de $\nu \sim 10^8$ Hz y $T \sim 10^6$ K para el t\'ermino logar\'itmico, tenemos
+
+\begin{equation} \label{coeficiente_absorcion_simple}
+\kappa \approx 0.2 n_e^2T^{-3/2} \nu^{-2} cm^{-1}
+\end{equation}
+
 Esta atm\'osfera solar est\'a descrita por la f\'isica de un plasma magnetizado. El estado del plasma y/o su interacci\'on con el campo magn\'etico establecen mecanismos de emisi\'on en pr\'acticamente todo el espectro electromagn\'etico. Estos mecanismos consisten en transiciones at\'omicas (que pueden ser ionizantes, de recombinaci\'on y tipo ligado-ligado) y mecanismos de emisi\'on libre-libre como radiaci\'on \emph{bremsstrahlung}, radiaci\'on sincrotr\'onica y radiaci\'on plasma.  ~\citep{ashwanden}
 
 La atm\'osfera solar se extiende desde los niveles fotos\'ericos hasta el medio coronal pasando por el medio cromosf\'erico, involucrando una escala de longitud de $1R_{\odot}$--$3R_{\odot}$ ~\citep{NASAsun}. La \emph{fot\'osfera} se constituye de gr\'anulos convectivos de peque\~na escala ($10^3$~km), separados de entre s\'i por capas intergranulares, las cuales concentran elementos de alto flujo magn\'etico ($|B| \le 1\mbox{kG}$). La escala temporal de la ocurrencia de un gr\'anulo es de unos minutos aproximadamente. La \emph{crom\'osfera} (ver Figura \ref{atmosfera_solar}) es una capa que se extiende por alrededor de $2\times 10^3$~km. Emite intensamente en la l\'inea H$\alpha$ ($\lambda=6563~\mbox{\AA}$) y ultravioleta. Similarmente a la fot\'osfera, la base de la crom\'osfera presenta gr\'anulos con una escala de tama\~no relativamente mayor concentrando flujo magn\'etico, el cual est\'a asociado en unos casos con flujos verticales de plasma llamados \emph{esp\'iculas} o a microarcos magn\'eticos en otros casos ~\citep{NASAweb}. M\'as all\'a de la base de la crom\'osfera cambia la condici\'on en la presi\'on dominante, ya que mientras la presi\'on del gas domina a niveles fotosf\'ericos, a estos niveles esta condici\'on se invierte y las distribuciones de brillo observadas est\'an dominadas por la geometr\'ia del campo magn\'etico ~\citep{priest}.
