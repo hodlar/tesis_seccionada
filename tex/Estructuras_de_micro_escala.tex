@@ -27,7 +27,7 @@ En el caso de una distribuci\'on electr\'onica Maxwieliana de temperatura T, $T_
 \eta_\nu = \kappa_\nu k T \nu^2/c^2 \, erg \, cm^{-3} \,s^{-1} \,Hz^{-1}\, sr^{-1}
 \end{equation}
 
-En contraste, para una distribuci\'on no t\'ermica, $T_eff$ generalmente es una funci\'on tanto de frecuencia como de modo de polarizaci\'on (Wild et al. 1963). N\'otese que el factor usual de 2 se retira de las ecuaciones \ref{temperatura_brillo} y \ref{fuente} dado que definimos $I_\nu$ y $S_\nu$ para cada polarizaci\'on ortogonal independientemente y tenemos
+En contraste, para una distribuci\'on no t\'ermica, $T_{eff}$ generalmente es una funci\'on tanto de frecuencia como de modo de polarizaci\'on (Wild et al. 1963). N\'otese que el factor usual de 2 se retira de las ecuaciones \ref{temperatura_brillo} y \ref{fuente} dado que definimos $I_\nu$ y $S_\nu$ para cada polarizaci\'on ortogonal independientemente y tenemos
 
 \begin{equation} \label{intensidad_total}
 I^{tot}_\nu = I^{P1}_\nu + I^{P2}_\nu
@@ -35,17 +35,17 @@ I^{tot}_\nu = I^{P1}_\nu + I^{P2}_\nu
 
 Las ecuaciones \ref{temperatura_brillo} y \ref{fuente} permiten escribir la ecuaci\'on de transferencia en la forma
 \begin{equation} \label{diferencial_temperatura}
-dT_b/d\tau_\nu = -T_b + T_eff
+dT_b/d\tau_\nu = -T_b + T_{eff}
 \end{equation}
 
 o como integral
 
 \begin{equation} \label{temperatura_integral}
-T_b = \int_{0}^{\tau_\nu} T_eff e^{-t_\nu} dt_\nu + T_{b0} e^{-\tau_\nu}
+T_b = \int_{0}^{\tau_\nu} T_{eff} e^{-t_\nu} dt_\nu + T_{b0} e^{-\tau_\nu}
 \end{equation}
 
 Las ecuaciones \ref{diferencial_temperatura} y \ref{diferencial_temperatura} y la f\'ormula girosincrotr\'on dadas a continuaci\'on son v\'alidas solo para medios en que la densidad es tan baja que el \'indice de refracci\'on es cercano a la unidad. Esta situaci\'on, que aplica a un rango amplio de situaciones astrof\'isicas, es el \'unico para el que la f\'ormula de inter\'es puede ser considerablemente simplificado. Cuando el \'indice de refacci\'on se desv\'ia significativamente d ela unidad, debe ser inclu\'ido propiamente en las ecuaciones \ref{diferencial_temperatura} y \ref{diferencial_temperatura}, y el medio de supresi\'on (el efecto Razin-Tsytovich) debe ser tomado en cuenta. Puntualmente el medio de supresi\'on es importante cuando $\nu < 20$ $\eta_e/B$ (ver Ginzburg \& Syrovatskii 1969).
-En el caso especial de una fuente aislada con $T_eff$ constante, la ecuaci\'on \ref{temperatura_integral} se reduce a
+En el caso especial de una fuente aislada con $T_{eff}$ constante, la ecuaci\'on \ref{temperatura_integral} se reduce a
 
 \begin{equation} \label{t_brillo1}
 T_b = T_{eff}[1-e^{-\tau_\nu}]
@@ -72,9 +72,20 @@ Cuando los electrones son desviados individualmente en los campos coulomb deione
 
 El coeficiente de absorci\'on para electrones t\'ermicos es
 
+\begin{equation*} \label{coeficiente1}
+\kappa \approx \sum_{i} \frac{1}{3c} (\frac{2}{\pi})^{1/2} \frac{\nu_p^2}{\nu^2} \frac{4\pi Z_i^2 n_i e^4}{m^{1/2}(kT)^{3/2}} \frac{\pi}{\sqrt{3}}G(T,\nu)
+\end{equation*}
+\begin{equation*} \label{coeficiente2}
+\approx 9.78 \times 10^{-3} \frac{n_e}{\nu^2T^{3/2}} \sum_i Z_i^2 n_i
+\end{equation*}
 \begin{equation} \label{coeficiente_absorcion}
-\kappa \approx \sum_{i} \frac{1}{3c} (\frac{2}{\pi})^{1/2} \frac{\nu_p^2}{\nu^2} \frac{4\pi Z_i^2 n_i e^4}{m^{1/2}(kT)^{3/2}} \frac{\pi}{\sqrt{3}}G(T,\nu) \approx 9.78 \times 10^{-3} \frac{n_e}{\nu^2T^{3/2}} \sum_i Z_i^2 n_i
+\times =
+    \begin{cases}
+    18.2+ln T^{3/2}-ln\nu    & (T < 2 x 10^5 K)\\
+    24.5+lnT-ln\nu           & (T < 2 x 10^5 K).
+    \end{cases}
 \end{equation}
+
 
 La emissividad $\eta_\nu$ se encuentra relacionada a $\kappa_\nu$ por la ley de Kirchhoff (Ecuaci\'on \ref{eta_frecuencia}).
 
