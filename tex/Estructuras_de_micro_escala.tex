@@ -20,7 +20,7 @@ El rango de temperaturas implicado en este cambio de morfolog\'ia, de gr\'anulos
 Con el advenimiento de instrumentos que observan en el rango UV, como el Interface Region Imaging Spectrograph (IRIS) y el Solar Dynamics Observatory (SDO), muestra que la estructura de la atm\'osfera (y muy particularmente, de la crom\'osfera) es tan complejamente distribuida, que un modelo que promedie propiedades como en el p\'arrafo anterior no puede capturar el escenario real ~\citep{VAULT1}. 
 
 En a\~nadidura, las  observaciones del experimento VAULT (Very high Angular resolution ULtraviolet Telescope por sus siglas en ingl\'es) complementan la evidencia de una estructura cromosf\'erica y de la existencia de peque\~nos loops frios \citep{VAULT1}, los cu\'ales confirman la presencia de campos magn\'eticos.
-VAULT es un proyecto de exploraci\'on espacial que data de 1999 y que busca estudiar la conexi\'on entre la corona y la crom\'osfera solar al observar la l\'inea espectral m\'as fuerte del sol, la Ly$\alpha$ a 1216A.
+VAULT es un proyecto de exploraci\'on espacial que data de 1999 y que busca estudiar la conexi\'on entre la corona y la crom\'osfera solar al observar la l\'inea espectral m\'as fuerte del sol, la Ly$\alpha$ a 1216~$\mbox{\AA}$.
 La resoluci\'on angular de sub-arcosegundos ($\approx$.3") permite ver directamente los peque\~nos loops f\'ios en la estructura de Sol Quieto. El parecido de los resultados entre los modelos y las observaciones indican que la explicaci\'on de las estructuras finas observadas en t\'erminos de loops frios es plausible.
 
 Como se muestra en la Figura \ref{fig:vault_compare} las im\'agenes de VAULT nos permiten mejorar la calidad de nuestras observaciones, permiti\'endonos tener un mejor entendimiento de la composici\'on de la atm\'osfera solar (n\'otese tambi\'en la calidad de la Figura \ref{fig:vault_complete}) ~\citep{VAULT1}.
@@ -39,7 +39,7 @@ Como se muestra en la Figura \ref{fig:vault_compare} las im\'agenes de VAULT nos
 \label{fig:vault_complete}
 \end{figure}
 
-Actualmente se esta develando la estructura en el disco solar en ondas mm ($\lambda=3$~mm) con una resoluci\'on 3.7'' $\times$ 2.5''\citep{2018A&A...619L...6N}. La distribuci\'on de brillo es muy similar a la observada en su contraparte ultravioleta por el sat\'elite IRIS (ver Figura ~\ref{fig:chromosphericnet1}): una red cromosf\'erica constitu\'ida de gr\'anulos con temperatura de brillo $T_{\tiny{\mbox{b}}}=6500$~K en promedio (\citep{2018A&A...619L...6N}). Lo anterior sugiere que la radioemisi\'on en ondas mm esta  ubicada en la regi\'on cromosf\'erica dispuesta en flujos emergentes o estructuras filamentarias observadas al limbo (loops) (ver Figura ~\ref{fig:chromosphericnet2})
+Actualmente se esta develando la estructura en el disco solar en ondas mm ($\lambda=3$~mm) con una resoluci\'on 3.7'' $\times$ 2.5''\citep{2018A&A...619L...6N}. La distribuci\'on de brillo es muy similar a la observada en su contraparte ultravioleta por el sat\'elite IRIS (ver Figura ~\ref{fig:chromosphericnet1}): una red cromosf\'erica constitu\'ida de gr\'anulos con temperatura de brillo $T_{b}=6500$~K en promedio (\citep{2018A&A...619L...6N}). Lo anterior sugiere que la radioemisi\'on en ondas mm esta  ubicada en la regi\'on cromosf\'erica dispuesta en flujos emergentes o estructuras filamentarias observadas al limbo (loops) (ver Figura ~\ref{fig:chromosphericnet2})
 
 Se puede decir entonces que el conocimiento con respecto al impacto de las micro estructuras magn\'eticas en la emisi\'on milim\'etrica y submilim\'etrica es escaso. Sin embargo existen esfuerzos recientes por comprender este impacto. Por ejemplo, \emph{Pakal} (De la Luz 2010) es un c\'odigo que resuelve la ecuaci\'on de transferencia radiativa en tres dimensiones en una aproximaci\'on plano-paralela, cuya estratificaci\'on sigue perfiles conocidos de densidad y temperatura y bas\'andose de los modelos semi-emp\'iricos VAL y C7, lo cuales, bajo determinadas modificaciones se introducen en c\'odigo \emph{Pakal}.
 
@@ -87,86 +87,84 @@ En esta tesis se propone una extensi\'on en el m\'odulo de funciones f\'isicas (
 
 \section{Sobre el Sol quieto y la emisi\'on submilim\'etrica solar}
 
-El concepto de emisión de radio del sol quieto se refiere a una simplifiación teórica en la cantidad de emisión de radio del Sol. Sin embargo, el Sol nunca se encuentra por completo quieto; algunos procesos turbulentos en la atm\'osfera solar y la corona hacen aparentar que existen regiones cuya emisi\'on de radio, siendo naturalmente espor\'adica, incrementa el valor de su intensidad observada cuando es comparada con el nivel "quieto" del sol ~\citep{sol_quieto}.
+El concepto de emisión de radio del sol quieto se refiere a una simplifiación teórica en la cantidad de emisión de radio del Sol. Sin embargo, el Sol nunca se encuentra por completo quieto; algunos procesos turbulentos en la atm\'osfera solar y la corona hacen aparentar que existen regiones cuya emisi\'on de radio, siendo naturalmente espor\'adica, incrementa el valor de su intensidad observada cuando es comparada con el nivel "quieto" del Sol ~\citep{sol_quieto}.
 
-En este trabajo, e asume \'unicamente el estado de sol quieto debido a la complejidad del Sol activo. Sin embargo, el entendimiento del sol quieto tambi\'en nos ayudar\'ia a entender mejor el Sol Activo. Concretamente, la correcta caracterizaci\'on del Sol Quieto nos permitir\'ia entender el fondo de radiaci\'on del Sol Activo.
+En este trabajo, se asume \'unicamente el estado de sol quieto debido a la complejidad del Sol activo. Sin embargo, el entendimiento del sol quieto tambi\'en nos ayudar\'ia a entender mejor el Sol Activo. Concretamente, la correcta caracterizaci\'on del Sol Quieto nos permitir\'ia entender el excedente de radiaci\'on que se le atribuye al Sol Activo.
 
-Una caracter\'istica relevante del Sol quieto para esta tesis es el de la intensidad de sus campos magn\'eticos. Particularmente los campos magn\'eticos en Sol quieto, medidos seg\'un las l\'ineas espectrales de Zeeman, contienen un campo de B= .1 - .5G, mientras que sus fuerzas absolutas de campo en elementos resueltos var\'ian entre B = 10-50G \citep{1000G}. Estos valores se utilizan en el modelo computacional propuesto en este texto.
+Una caracter\'istica relevante del Sol quieto para esta tesis es la intensidad de sus campos magn\'eticos. Particularmente los campos magn\'eticos del sol quieto, medidos seg\'un las l\'ineas espectrales de Zeeman, contienen un campo de B= .1 - .5G, mientras que sus fuerzas absolutas de campo en elementos espacialmente resueltos var\'ian entre B = 10-50G \citep{1000G}. Estos valores se utilizan en el modelo computacional propuesto en este texto.
 
-Si bien se conocen los rangos de la magnitudes de los campos magn\'eticos del Sol quieto ~\citep{VAULT2}, existe una dificultad en medir las magnitudes concretas de estos debido a corrientes desconocidas y condiciones no libres de fuerza. Lo anterior ocasiona que se tengan que calcular extrapolaciones a lo largo de la crom\'osfera y la regi\'on de transici\'on para obtener valores aproximados. 
+Si bien se conocen los rangos de la magnitudes de los campos magn\'eticos del sol quieto ~\citep{VAULT2}, existe una dificultad en medir las magnitudes concretas de estos debido a corrientes desconocidas y condiciones de fuerza no libre. Lo anterior ocasiona que se tengan que calcular extrapolaciones a lo largo de la crom\'osfera y la regi\'on de transici\'on para obtener valores aproximados. 
 
-La región de transisión es una capa muy delgada e irregular de la atmósfera solar que separa la corona caliente de una cromósfera mucho más fría. El calor fluye de la corona a la cromósfera en un proceso que produce esta pequeña regi\'on donde la temperatura cambia rápidamente de 1,000,000C hasta 20,000C. A esas temperaturas, el hidrógeno es ionizado, provocando que la luz emitida en esta región sea dominada por iones como C IV, O IV y Si IV (carbono, oxígeno y silicón); emitiendo luz en la región ultravioleta del espectro solar ~\citep{NASAtr}, es la de la nasa NASA 2014.
+La región de transición es una capa muy delgada e irregular de la atmósfera solar que separa la corona caliente de una cromósfera mucho más fría. El calor fluye de la corona a la cromósfera en un proceso que produce esta pequeña regi\'on donde la temperatura cambia rápidamente de $10^6$~K hasta $2\times 10^5$~K. A esas temperaturas, el hidrógeno es ionizado, provocando que la luz emitida en esta región sea dominada por iones como C IV, O IV y Si IV (Carbono, Oxígeno y Silicio); emitiendo luz en la región ultravioleta del espectro solar ~\citep{NASAtr}%, es la de la nasa NASA 2014.
 %(solarscience.msfc.nasa.gov/t_region.shtml)
 
-Otra caracter\'istica importante del Sol quieto para esta tesis es la emisi\'on milim\'etrica del plasma. Con la emisi\'on milim\'etrica se puede aproximar el grado de ionizaci\'on de la atm\'osfera solar; y se pueden inferir aproximaciones de la temperatura, la densidad y la presi\'on que hay en ella ~\citep{millimeter}. Estas \'ultimas aproximaciones se realizan seg\'un diferentes modelos; los cuales se pueden conceptualizar como emp\'iricos, semi-emp\'iricos y observacionales ~\citep{2010ApJS..188..437D}.
+Otra caracter\'istica importante del sol quieto para esta tesis es la emisi\'on milim\'etrica del plasma. Con la emisi\'on milim\'etrica se puede aproximar el grado de ionizaci\'on de la atm\'osfera solar; y se pueden inferir aproximaciones de la temperatura, la densidad y la presi\'on que hay en ella ~\citep{millimeter}. Estas \'ultimas aproximaciones se realizan seg\'un diferentes modelos; los cuales se pueden conceptualizar como emp\'iricos, semi-emp\'iricos y observacionales ~\citep{2010ApJS..188..437D}.
 
 Independientemente del tipo de modelo, por definici\'on, todos tienen limitaciones en sus c\'alculos de temperatura, densidad y presi\'on. En el modelo propuesto, se busca robustecer el modelo Pakal mediante la anexi\'on de el efecto te\'orico de los campos magn\'eticos. Esta anexi\'on se puede justificar, por diferentes teor\'ias y observaciones. Por ejemplo, un estudio reciente por Meunier (2018) propone que las peque\~nas regiones de campo magn\'etico contribuyen a la emisi\'on cromosf\'erica y por consiguiente a la emisi\'on milim\'etrica. Lo anterior, como se explic\'o previamente, afectar\'ia a los c\'alculos de la temperatura, la densidad y la presi\'on de la crom\'osfera; haci\'endolos te\'oricamente m\'as precisos.
 
-A continuaci\'on se define la temperatura de brillo, temperatura efectiva y las relaciones de la transferencia radiativa en una forma que \'util para la interpretaci\'on de las observaciones de radio de acuerdo a Dulk ~\citep{dulk_stars}. La ecuaci\'on de la transferencia radiativa es usualmente escrita en t\'erminos de la intensidad espec\'ifica $I_\nu$, pero a frecvuencias de radio donde \textit{$h\nu$} $<<$ kT, es conveniente cambiar las variables de $I_\nu$ a temperaturas de brillo $T_b$, donde
+A continuaci\'on se define la temperatura de brillo $T_{b}$, temperatura efectiva $T_{\mbox{\tiny eff}}$ y las relaciones de la transferencia radiativa en una forma que \'util para la interpretaci\'on de las observaciones de radio de acuerdo a~\citep{dulk_stars}.
+
+Para un material que est\'a en \emph{equilibrio termodin\'amico}, la intensidad $I_{\nu}$ de su campo de radiaci\'on, equivale a la distribuci\'on de energ\'ia
+$B_{\nu}(T)$que caracteriza al mismo. En particular, para el r\'egimen de Rayleigh-Jeans donde $h\nu \ll k_{B}T$, La intensidad $I_\nu$ se relaciona con $T_{b}$, para un medio \'opticamente grueso, mediante:
 
 \begin{equation} \label{temperatura_brillo}
 I_\nu = kT_bv^2/c^2\, erg \, cm^{-2} \,s^{-1} \,Hz^{-1} \,sr^{-1}
 \end{equation}
 
-Es tambi\'en conveniente reemplazar la funci\'on fuente $S_\nu$ por $T_{eff}$, la temperatura efectiva de los electrones radiantes, usando la relaci\'on
 
-\begin{equation} \label{fuente}
-S_\nu = \eta_\nu \kappa_\nu = kT_{eff}\nu^2/c^2
-\end{equation}
+Y la ecuaci\'on de transporte radiativo
 
-En el caso de una distribuci\'on electr\'onica Maxwieliana de temperatura T, $T_eff$ es igual a T indepentemente de la emisi\'on del mecanizmo, frecuencia o modo de polarizaci\'on; adem\'as, la emisi\'on $\eta_\nu$ es relacionada con el coeficiente de absorci\'on $\kappa_\nu$ por la ley de Kirchhoff
+\begin{equation}
+\frac{dI_{\nu}}{d\tau_{\nu}}=-I_{\nu}+S_{\nu}
+\end{equation}  
 
-\begin{equation} \label{eta_frecuencia}
-\eta_\nu = \kappa_\nu k T \nu^2/c^2 \, erg \, cm^{-3} \,s^{-1} \,Hz^{-1}\, sr^{-1}
-\end{equation}
-
-En contraste, para una distribuci\'on no t\'ermica, $T_{eff}$ generalmente es una funci\'on tanto de frecuencia como de modo de polarizaci\'on (Wild et al. 1963). N\'otese que el factor usual de 2 se retira de las ecuaciones \ref{temperatura_brillo} y \ref{fuente} dado que definimos $I_\nu$ y $S_\nu$ para cada polarizaci\'on ortogonal independientemente y tenemos
-
-\begin{equation} \label{intensidad_total}
-I^{tot}_\nu = I^{P1}_\nu + I^{P2}_\nu
-\end{equation}
-
-Las ecuaciones \ref{temperatura_brillo} y \ref{fuente} permiten escribir la ecuaci\'on de transferencia en la forma
+Se expresa como:
 \begin{equation} \label{diferencial_temperatura}
 dT_b/d\tau_\nu = -T_b + T_{eff}
 \end{equation}
 
-o como integral
+Donde la \emph{funci\'on fuente} $S_{\nu}$ satisface:
 
-\begin{equation} \label{temperatura_integral}
-T_b = \int_{0}^{\tau_\nu} T_{eff} e^{-t_\nu} dt_\nu + T_{b0} e^{-\tau_\nu}
+\begin{equation} \label{fuente}
+S_\nu = B_{\nu}(T_{\mbox{\tiny eff}})=kT_{\mbox{\tiny eff}}\nu^2/c^2
 \end{equation}
 
-Las ecuaciones \ref{diferencial_temperatura} y \ref{diferencial_temperatura} y la f\'ormula girosincrotr\'on dadas a continuaci\'on son v\'alidas solo para medios en que la densidad es tan baja que el \'indice de refracci\'on es cercano a la unidad. Esta situaci\'on, que aplica a un rango amplio de situaciones astrof\'isicas, es el \'unico para el que la f\'ormula de inter\'es puede ser considerablemente simplificado. Cuando el \'indice de refacci\'on se desv\'ia significativamente d ela unidad, debe ser inclu\'ido propiamente en las ecuaciones \ref{diferencial_temperatura} y \ref{diferencial_temperatura}, y el medio de supresi\'on (el efecto Razin-Tsytovich) debe ser tomado en cuenta. Puntualmente el medio de supresi\'on es importante cuando $\nu < 20$ $\eta_e/B$ (ver Ginzburg \& Syrovatskii 1969).
-En el caso especial de una fuente aislada con $T_{eff}$ constante, la ecuaci\'on \ref{temperatura_integral} se reduce a
+En contraste, para una distribuci\'on no t\'ermica, $T_{\mbox{\tiny eff}}$ generalmente es una funci\'on tanto de frecuencia como de modo de polarizaci\'on (Wild et al. 1963). Entonces, la soluci\'on para la temperatura de brillo es:
+
+\begin{equation} \label{temperatura_integral}
+T_{b} = \int_{0}^{\tau_\nu} T_{\mbox{\tiny eff}} e^{-t_\nu} dt_\nu + T_{b0} e^{-\tau_\nu}
+\end{equation}
+
+Para el caso especial de una fuente aislada con $T_{eff}$ constante, la ecuaci\'on \ref{temperatura_integral} se reduce a
 
 \begin{equation} \label{t_brillo1}
-T_b = T_{eff}[1-e^{-\tau_\nu}]
+T_{b} = T_{\mbox{\tiny eff}}[1-e^{-\tau_\nu}]
 \end{equation}
 
 \begin{equation} \label{t_brillo2}
-T_b = T_{eff} \qquad (si \, \tau_\nu >> 1)
+T_{b} = T_{\mbox{\tiny eff}} \qquad (\mbox{si} \, \tau_\nu \gg 1)
 \end{equation}
 
 \begin{equation} \label{t_brillo3}
-T_b = T_{eff} \tau_\nu (c^2/k\nu^2)\eta_ \nu L \qquad (si \, \tau_\nu << 1)
+T_{b} = T_{\mbox{\tiny eff}} \tau_\nu (c^2/k\nu^2)\eta_ \nu L \qquad (\mbox{si} \, \tau_\nu \ll 1)
 \end{equation}
 
-Para radiaciones incoherentes, las ecuaciones \ref{t_brillo1} y \ref{t_brillo2} son de considerable importancia y utilidad. Ah\'i se muestra que tal radiaci\'on no puede alcanzar un valor de $T_b$ m\'as alto que $T_{eff}$. Adem\'as, la funci\'on fuente $T_{eff}$ se relaciona a la energ\'ia media de las part\'iculas que emitidas por $<E>$ = $kT_{eff}$. Por ejemplo, para electrones monoel\'ectricos de $T_{eff}$ = $E_0/k$ o una distribuci\'on Maxweliana de $T_{eff}$ = $T$ = $E_0/k$, tenemos que $T_{b,max} = T_{eff}$, por ejemplo $T_{b,max} = 1.16 x 10^7$ K si $E_0 = 1$ keV o $1.16 x 10 ^{10}$K si $E_0 = 1$MeV. En el caso de la ley de potencia de distribuci\'on elect\'onica, $T_{eff}$ es determinada por la energ\'ia media de los electrones contribuyendo principalmente a la intensidad a una frecuencia particular y un modo de polarizaci\'on. Si esa energ\'ia media y por lo tanto la temperatura de brillo son muy altas, las circunstancias  deben ser que la mayor cantidad delectrones de baja energ\'ia no emitan y absorban eficientemente; en general, esto requiere un campo magn\'etico d\'ebil. Bajo condiciones estelares y solares, la fuerza de los campos tiende a ser grande y las energ\'ias electr\'onicas bajas (comoparado con, por ejemplo, las fuentes extragal\'acticas), tal que $T_{eff}$ y $T_b$ de emisi\'on incoherente son usualmente limitados a entre $10^9$ y $10^{10}$K. Los valores observados substancialmente sobre eso por lo tanto, implica un mecanismo coherente, tal como un maser o radiaci\'on plasma.
-La densidad de flujo S (para una polarizaci\'on) de una fuente de radio se relaciona con la temperatura de brillo por la relaci\'on
+
+Para radiaciones incoherentes, las ecuaciones \ref{t_brillo1} y \ref{t_brillo2} son de considerable importancia y utilidad. Ah\'i se muestra que tal radiaci\'on no puede alcanzar un valor de $T_{\mbox{\tiny b}}$ m\'as alto que $T_{\mbox{\tiny eff}}$. Adem\'as, la funci\'on fuente $T_{\mbox{\tiny eff}}$ se relaciona con la energ\'ia media de las part\'iculas que emitidas por $\langle E \rangle$ = $k_{\mbox{\tiny B}}T_{\mbox{\tiny eff}}$. Por ejemplo, para electrones monoel\'ectricos de $T_{\mbox{\tiny eff}}$ = $E_0/k$ o una distribuci\'on Maxweliana de $T_{eff}$ = $T$ = $E_0/k$, tenemos que $T_{\mbox{\tiny b,max}} = T_{\mbox{\tiny eff}}$, por ejemplo $T_{\mbox{\tiny b,max}} = 1.16 \times 10^7$ K si $E_0 = 1$~keV \'o $1.16 \times 10 ^{10}$~K si $E_0 = 1$MeV. En el caso de una distribuci\'on elect\'onica en ley de potencias, $T_{eff}$ se determina por la energ\'ia media de los electrones que contribuyen principalmente a la intensidad a una frecuencia en particular (y un modo de polarizaci\'on). Si esa energ\'ia media y por lo tanto la temperatura de brillo son muy altas, las circunstancias  deben ser que la mayor cantidad de electrones de baja energ\'ia no emitan y absorban eficientemente; en general, esto requiere un campo magn\'etico d\'ebil. Bajo condiciones estelares y solares, la fuerza de los campos tiende a ser grande y las energ\'ias electr\'onicas bajas (comparado por ejemplo, con fuentes extragal\'acticas), tal que $T_{\mbox{\tiny eff}}$ y $T_{\mbox{\tiny b}}$ de emisi\'on incoherente poseen valores limitados entre $10^9$ y $10^{10}$~K. Valores superiores observados, implican un mecanismo coherente, tal como un maser o radiaci\'on plasma.
+La densidad de flujo S (para una polarizaci\'on) de una fuente de radio se relaciona con la temperatura de brillo mediante:
 
 \begin{equation} \label{densidad_flujo}
-S = k\nu^2/c^2 \int T_b d\Omega
+S = k_{\mbox{\tiny B}}\nu^2/c^2 \int T_{\mbox{\tiny b}} d\Omega
 \end{equation}
 
-donde $d\Omega$ es un \'angulo diferencial s\'olido y la integral es sobre el \'area proyectada de la fuente.
+donde $d\Omega$ es un elemento diferencia de \'angulo s\'olido y la integral es sobre el \'area proyectada de la fuente.
 
-Cuando los electrones son desviados individualmente en los campos coulomb deiones debido a su movimiento acelerado, se produce bremsstrahlung, o emisi\'on libre-libre. El proceso inverso, absorci\'on libre-libre, ocurre cuanddo los electrones comienzan a oscilar en resonancia con el campo el\'ectrico de una onda y entonces las colisiones electr\'on i\'on destruyen la oscilaci\'on; esto decrementa la energ\'ia de la onda y calienta el plasma.
+Cuando los electrones son desviados individualmente en los campos coulombianos de iones debido a su movimiento acelerado, se produce bremsstrahlung, o emisi\'on libre-libre. El proceso inverso, absorci\'on libre-libre, ocurre cuanddo los electrones comienzan a oscilar en resonancia con el campo el\'ectrico de una onda. Eventualmente las colisiones electr\'on-i\'on destruyen esta oscilaci\'on diezmando la energ\'ia de la onda y calentando por consecuencia el plasma.
 
 El coeficiente de absorci\'on para electrones t\'ermicos es
 
 \begin{equation*} \label{coeficiente1}
-\kappa \approx \sum_{i} \frac{1}{3c} (\frac{2}{\pi})^{1/2} \frac{\nu_p^2}{\nu^2} \frac{4\pi Z_i^2 n_i e^4}{m^{1/2}(kT)^{3/2}} \frac{\pi}{\sqrt{3}}G(T,\nu)
+\kappa \approx \sum_{i} \frac{1}{3c} \left(\frac{2}{\pi}\right)^{1/2} \frac{\nu_p^2}{\nu^2} \frac{4\pi Z_i^2 n_i e^4}{m^{1/2}(kT)^{3/2}} \frac{\pi}{\sqrt{3}}G(T,\nu)
 \end{equation*}
 \begin{equation*} \label{coeficiente2}
 \approx 9.78 \times 10^{-3} \frac{n_e}{\nu^2T^{3/2}} \sum_i Z_i^2 n_i
@@ -174,17 +172,20 @@ El coeficiente de absorci\'on para electrones t\'ermicos es
 \begin{equation} \label{coeficiente_absorcion}
 \times =
     \begin{cases}
-    18.2+ln T^{3/2}-ln\nu    & (T < 2 x 10^5 K)\\
-    24.5+lnT-ln\nu           & (T < 2 x 10^5 K).
+    18.2+\mbox{ln} T^{3/2}-\mbox{ln}\nu    & (T < 2 x 10^5 \mbox{K})\\
+    24.5+\mbox{ln}T-\mbox{ln}\nu           & (T < 2 x 10^5 \mbox{K}).
     \end{cases}
 \end{equation}
 
 
-La emissividad $\eta_\nu$ se encuentra relacionada a $\kappa_\nu$ por la ley de Kirchhoff (Ecuaci\'on \ref{eta_frecuencia}).
+La emissividad $\eta_\nu$ se encuentra relacionada a $\kappa_\nu$ por la ley de Kirchhoff:
 
-Para varios casos una forma simplificada de la Ecuaci\'on \ref{coeficiente_absorcion} puede ser usada. Asumiendo un plasma hidr\'ogeno-helio completamente ionizado y tomando valores t\'ipicos de $\nu \sim 10^8$ Hz y $T \sim 10^6$ K para el t\'ermino logar\'itmico, tenemos
+\begin{equation}
+\eta_{\nu}=B_{\nu}(T)\kappa_{\nu}
+\end{equation}
+ 
+Para varios casos una forma simplificada de la Ecuaci\'on \ref{coeficiente_absorcion} puede ser usada. Asumiendo un plasma hidr\'ogeno-helio completamente ionizado y tomando valores t\'ipicos de $\nu \sim 10^8$~Hz y $T \sim 10^6$~K para el t\'ermino logar\'itmico, tenemos
 
 \begin{equation} \label{coeficiente_absorcion_simple}
-\kappa \approx 0.2 n_e^2T^{-3/2} \nu^{-2} cm^{-1}
+\kappa \approx 0.2 n_e^2T^{-3/2} \nu^{-2}~\mbox{cm}^{-1}
 \end{equation}
-

@@ -1,6 +1,6 @@
 \chapter{Extensi\'on al modelo Pakal \-- A\~nadiendo presi\'on magn\'etica}
 
-La extensi\'on propuesta en esta tesis al modelo computacional Pakal le a\~nade a este \'ultimo el efecto de la presi\'on magn\'etica a la ecuaci\'on de estado. Con lo anterior, el modelo de Pakal, que en principio era un modelo computacional que simulaba un modelo hidrost\'atico para el comportamiento del plasma, se robustece al convertirse en un modelo Magnetohidrost\'atico. El modelo original resuelve la ecuaci\'on de estado del gas suponiendo una atm\'osfera est\'atica donde:
+La extensi\'on propuesta en esta tesis al modelo computacional Pakal le a\~nade a este \'ultimo el efecto de la presi\'on magn\'etica a la ecuaci\'on de estado. Con lo anterior, el modelo de Pakal, que en principio era un modelo computacional que simulaba un modelo hidrost\'atico para el comportamiento del plasma, se robustece al convertirse en un modelo Magnetohidrost\'atico. El modelo original resuelve la ecuaci\'on de estado del gas suponiendo una atm\'osfera est\'atica y estratificada:
 
 \begin{equation} \label{ecuacion_hidrostatica}
 \frac{dp}{dz} = -g\rho
@@ -12,22 +12,22 @@ Siendo \textit{p} la presi\'on, \textit{z} la profundidad geom\'etrica, \textit{
 p = p_g + \frac{1}{2}\rho v_t^2
 \end{equation}
 
-En la ecuaci\'on \ref{ecuacion_presion}, el t\'ermino $p_g$ es la presi\'on del gas en equilibrio termodin\'amico ($p_g$ = $n_t$kT), mientras que el t\'ermino $v_t$ es definido como la velocidad promedio de turbulencia, la cu\'al caracteriza la presi\'on debida a la turbulencia.
+En la ecuaci\'on \ref{ecuacion_presion}, el t\'ermino $p_g$ es la presi\'on del gas en equilibrio termodin\'amico ($p_g$ = $n_tk_{\tiny\mbox{B}}T$), mientras que el t\'ermino $v_t$ es definido como la velocidad promedio de turbulencia, la cu\'al caracteriza la presi\'on debida a la turbulencia.
 
 A esta f\'ormula, se le a\~nade el efecto de la presi\'on causada por el campo magn\'etico, conocida como presi\'on magn\'etica ($P_B$), resultando en \citep{priest}: 
 
 \begin{equation} \label{mhs}
-p = p_g + \frac{1}{2}\rho v_t^2 + p_B
+p = p_g + \frac{1}{2}\rho v_t^2 + P_B
 \end{equation}
 
-El valor utilizado para $P_B$ est\'a dado por $P_B = \frac{B^2}{8\pi}$ donde B es la magnitud del campo magn\'etico en el punto donde se desea realizar el c\'alculo y $\pi$ es la constante matem\'atica \citep{PBvalue}. 
+El valor utilizado para $P_B$ est\'a dado por $P_B = \frac{B^2}{8\pi}$ donde B es la magnitud del campo magn\'etico en el punto donde se desea realizar el c\'alculo y $\pi\approx 3.1416$ \citep{PBvalue}. 
 
-A continuaci\'on se precisar\'a el c\'odigo de la extensi\'on computacional al programa Pakal realizado en esta tesis. Se contextualizar\'a dicho c\'odigo con secciones del c\'odigo original. Las extensiones al c\'odigo se diferenciar\'an al c\'odigo original al estar con un estilo de letra en \textbf{negrita}, mientras que los nombres de los archivos se encuentran \underline{subrayados}. Adem\'as, se comentar\'a la funci\'on realizada por el c\'odigo agregado. 
+A continuaci\'on se precisar\'a el c\'odigo de la extensi\'on computacional al programa Pakal realizado en esta tesis. Se contextualizar\'a esta modificaci\'on con secciones del c\'odigo original. Las extensiones al c\'odigo se diferenciar\'an al c\'odigo original al estar con un estilo de letra en \textbf{negrita}, mientras que los nombres de los archivos se encuentran \underline{subrayados}. Adem\'as, se comentar\'a la funci\'on realizada por el c\'odigo agregado. 
 
 Para hacer posible la adici\'on del efecto de la presi\'on magn\'etica sobre la ecuaci\'on de estado dentro del c\'odigo Pakal, se modificaron los siguientes archivos:\newline
 
 \underline{hmodel.h}
-En esta libreria se definen la estructura de la atmosfera, a la cual se le agregaron las componentes x, y, z del campo magnetico, asi como la variable $\xi$ para la modulacion del mismo
+En esta librer\'ia se definen la estructura de la atm\'osfera, a la cual se le agregaron las componentes x, y, z del campo magn\'etico, as\'i como la variable $\xi$ para la modulaci\'on del mismo
 \begin{lstlisting}[style=CStyle]
 typedef struct{
 	int id;
@@ -53,8 +53,8 @@ typedef struct{
 \end{lstlisting}
 
 \underline{main.c}
-Esta es la parte donde el m\'odulo Jaguar se encarga de llamar a las respectivas funciones que llevan a cabo los c\'alculos de cada uno de los pasos de integraci\'on. En este c\'odigo se agreg\'o la lectura de los valores de campo.\newline
-Los parametros amplitud e intensidad son los respectivos valores del campo magnetico.\newline
+\'Esta es la parte donde el m\'odulo Jaguar se encarga de llamar a las respectivas funciones que llevan a cabo los c\'alculos de cada uno de los pasos de integraci\'on. En este c\'odigo se agreg\'o la lectura de los valores de campo.\newline
+Los par\'ametros amplitud e intensidad son los respectivos valores del campo magnetico.\newline
 El par\'ameto alpha se define en el capitulo 4.\newline
 El par\'ametro B\_x0 representa la altura a la que nace el campo magn\'etico, tomando como referencia la base de la fot\'osfera.
 \begin{lstlisting}[style=CStyle]
@@ -73,10 +73,10 @@ int main(int argc, char **argv){
 	int cell;
 	int hydro;
 	/*----------------------------------------------------------*/
-	//Los parametros amplitud e intensidad son los respectivos valores del campo magnetico
-	//El parametro alpha representa el angulo entre el nacimiento del campo magnetico y el punto que se desea calcular, tomando como referencia de centro el centro solar
-	//B_x0 representa la altura de nacimiento del campo, tomando como referencia la base de la fotosfera
-	//magnetic es la variable que nos dice si se llamo la bandera del campo magnetico
+	//Los par\'ametros amplitud e intensidad son los respectivos valores del campo magn\'etico
+	//El par\'ametro alpha representa el \'angulo entre el nacimiento del campo magn\'etico y el punto que se desea calcular, tomando como referencia de centro el centro solar
+	//B_x0 representa la altura de nacimiento del campo, tomando como referencia la base de la fot\'osfera
+	//magnetic es la variable que nos dice si se llam\'o la bandera del campo magn\'etico
 	double amplitude, intensity, alpha;
 	int magnetic = 0;
 	int B_x0;
@@ -206,7 +206,7 @@ double f_hydro(double Y, double R, double Z, double T, double vt, double bx, dou
 \end{lstlisting}
 
 \underline{nlte.h}
-En el encabezado de la libreria de NLTE (non local thermodynamic equilibrium) se modifica para aceptar el campo magnetico
+En el encabezado de la librer\'ia de NLTE (non local thermodynamic equilibrium) se modifica para aceptar el campo magnetico
 \begin{lstlisting}[style=CStyle]
 //Se agregan las componentes x, y, z y xi para ser introducidas en la ecuacion de estado
 double f_hydro(double Y, double R, double Z, double T, double vt, double bx, double by, double bz, double xi);
@@ -214,7 +214,7 @@ void NLTE(Model *model, double error, int hydro, double pz1, double fz1,double d
 \end{lstlisting}
 
 \underline{Pakal.c}
-Pakal, al ser la parte del c\'odigo que "interact\'ua" con el usuario, es la parte que procesa la informaci\'on de la terminal y la env\'ia al resto del c\'odigo, tomando como entrada de la terminal los valores amplitud, intensidad y alpha, que son respectivamente los valores que se introduciran al campo magn\'etico.
+Pakal, al ser la parte del c\'odigo que ``interact\'ua'' con el usuario, es la parte que procesa la informaci\'on de la terminal y la env\'ia al resto del c\'odigo, tomando como entrada de la terminal los valores amplitud, intensidad y alpha, que son respectivamente los valores que se introducir\'an al campo magn\'etico.
 Amplitud: La amplitud del campo
 Intensidad: La intensidad del campo
 Alpha: \'Angulo entre el nacimiento del campo y la l\'inea de visi\'on a la que se desea calcular
